@@ -2,6 +2,14 @@
 
 源码仓库：[tangyiyong/LCEDA-batch-export-plugins](https://github.com/tangyiyong/LCEDA-batch-export-plugins)。许可证：Apache-2.0；版权 © 2026 @tangyiyong。
 
+## 开源项目与反馈
+
+本扩展采用 Apache-2.0 许可证开源，欢迎查看源码、提交问题和参与改进。
+
+- [GitHub 开源仓库](https://github.com/tangyiyong/LCEDA-batch-export-plugins)
+- [版本发布与安装包下载](https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases)
+- [问题反馈与功能建议](https://github.com/tangyiyong/LCEDA-batch-export-plugins/issues)
+
 首次获取源码：
 
 ```sh

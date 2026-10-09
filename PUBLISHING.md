@@ -2,6 +2,10 @@
 
 版本：1.2.1；作者与版权：@tangyiyong；许可证：Apache-2.0。
 
+开源项目：[GitHub · tangyiyong/LCEDA-batch-export-plugins](https://github.com/tangyiyong/LCEDA-batch-export-plugins)。
+
+安装包与版本记录：[GitHub Releases](https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases)；问题反馈：[GitHub Issues](https://github.com/tangyiyong/LCEDA-batch-export-plugins/issues)。
+
 ## 一、发布前准备
 
 使用自己的嘉立创账号登录 [扩展广场](https://jlc-ext.com/)，打开头像菜单进入个人主页，进入「扩展管理」。首次上传可能要求接受 [嘉立创EDA项目授权许可协议](https://oshwhub.com/page/license-agreement)。作者应阅读并决定是否接受；未接受时无法进入上传流程。发布授权与同意协议是两个独立事项。
