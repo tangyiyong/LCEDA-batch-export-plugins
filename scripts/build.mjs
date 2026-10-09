@@ -11,6 +11,10 @@ await fs.writeFile('iframe/index.html', html);
 const zip = new JSZip();
 for (const name of ['extension.json','dist/index.js','iframe/index.html','images/logo.png','LICENSE','NOTICE','README.md','CHANGELOG.md','THIRD_PARTY_NOTICES.md','PUBLISHING.md','examples/production-config.json']) zip.file(name, await fs.readFile(name));
 for(const lang of ['zh-Hans','zh-Hant','en','fr','ja','ko'])for(const part of ['', 'extensionJson/']){const name=`locales/${part}${lang}.json`;zip.file(name,await fs.readFile(name));}
+for (const name of ['overview.jpg','export-options.jpg']) {
+  const path = `images/demo/${name}`;
+  zip.file(path, await fs.readFile(path));
+}
 const output = `build/dist/${manifest.name}_v${manifest.version}.eext`;
 await fs.writeFile(output, await zip.generateAsync({type:'nodebuffer',compression:'DEFLATE'}));
 console.log(`安装包：${output}`);

@@ -1,6 +1,6 @@
 # 扩展市场发布操作说明
 
-版本：1.2.0；作者与版权：@tangyiyong；许可证：Apache-2.0。
+版本：1.2.1；作者与版权：@tangyiyong；许可证：Apache-2.0。
 
 ## 一、发布前准备
 
@@ -20,7 +20,7 @@ npm run build
 npm run release-check
 ```
 
-Windows PowerShell 可使用 `npm.cmd` 替代 `npm`，不需要改变系统脚本执行策略。构建命令、源码和安装包相同。产物为 `build/dist/lceda-batch-export_v1.2.0.eext`。
+Windows PowerShell 可使用 `npm.cmd` 替代 `npm`，不需要改变系统脚本执行策略。构建命令、源码和安装包相同。产物为 `build/dist/lceda-batch-export_v1.2.1.eext`。
 
 发布前检查：版本号与 package.json 一致；保留 UUID `c62d6419408648679f5c3de810da7bb4`；publisher 为 tangyiyong；分类为 PCB、Project；原创 PNG 图标为 512 × 512；入口 dist/index.js 存在；README、CHANGELOG 和许可齐全；没有生产文件或个人联系资料。
 
@@ -49,8 +49,12 @@ manifest 使用官方支持的 `repository.type = extension-store`。首次上�
 
 ## 五、发布后安装、更新和撤回
 
-从真实市场详情页安装，重新验收六种语言和一块板的 BOM、网表。确认安装版本为 1.2.0。保存市场链接与发布记录，作为下一版本 repository URL（若需要）。
+从真实市场详情页安装，重新验收六种语言和一块板的 BOM、网表。确认安装版本为 1.2.1。保存市场链接与发布记录，作为下一版本 repository URL（若需要）。
 
 更新时提高版本号、更新 CHANGELOG，保留 UUID/name，重新检查、上传并等待审核。默认配置 schema v1 保持向后兼容，语言文本不改变配置里的稳定字段值。回退时可从本地扩展管理器安装已保留的旧版本包；市场的下架或版本管理以当时页面实际能力为准，不假定已发布版本可覆盖或撤回。
 
 官方依据：[扩展广场发布流程](https://prodocs.lceda.cn/cn/api/guide/extensions-marketplace.html)、[扩展配置文件](https://prodocs.lceda.cn/cn/api/guide/extension-json.html)、[多语言支持](https://prodocs.lceda.cn/cn/api/guide/i18n.html)。平台页面要求如有更新，以当期实际校验为准。
+
+## 功能演示图检查
+
+README 必须包含可访问的功能演示图或 GIF。当前使用 `images/demo/` 下的两张实际界面截图与 GitHub 原始文件公开链接；发布前先推送图片到 GitHub，再确认两条链接可访问。`npm run release-check` 会检查 README 图片引用、JPEG 文件和安装包内容。截图必须使用公开示例数据，避免公开真实 PCB 工程。

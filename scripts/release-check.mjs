@@ -12,5 +12,19 @@ for(const file of ['extension.json','dist/index.js','iframe/index.html','README.
 const png=await zip.file('images/logo.png').async('nodebuffer');assert.equal(png.readUInt32BE(16),512);assert.equal(png.readUInt32BE(20),512);assert.ok(png.length<5*1024*1024);
 for(const lang of ['zh-Hans','zh-Hant','en','fr','ja','ko'])for(const part of ['','extensionJson/'])assert.ok(zip.file(`locales/${part}${lang}.json`));
 assert.ok(!Object.keys(zip.files).some(n=>/validation-output|node_modules|VALIDATION|\.env/.test(n)));
+const readme=await zip.file('README.md').async('string');
+const imageLinks=[...readme.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)].map(match=>match[1]);
+assert.ok(imageLinks.length>=2,'README must include functional demonstration images');
+const imagePrefix='https://raw.githubusercontent.com/tangyiyong/LCEDA-batch-export-plugins/main/';
+for (const link of imageLinks) {
+  assert.ok(link.startsWith(imagePrefix),'Demo image must use the public repository URL');
+  const file=link.slice(imagePrefix.length);
+  assert.match(file,/^images\/demo\/[a-z-]+\.jpg$/);
+  assert.ok(zip.file(file),`Missing README image in package: ${file}`);
+  const packed=await zip.file(file).async('nodebuffer'),local=await fs.readFile(file);
+  assert.ok(packed.equals(local),`Stale packaged image: ${file}`);
+  assert.equal(packed.readUInt16BE(0),0xffd8,'Invalid JPEG header');
+  assert.ok(packed.length>1000,'Empty demo image');
+}
 const report={version:m.version,path,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),checks:'passed',platforms:{macOS:'client verification recorded separately',Windows:'path/config automated tests; native client unverified'}};
 await fs.writeFile('build/release-check.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

@@ -3,7 +3,7 @@
   "uuid": "c62d6419408648679f5c3de810da7bb4",
   "displayName": "多子板一键导出",
   "description": "支持六种语言的多子板生产与测试资料批量导出；17 类批量接口，PNG/T-DISA 官方窗口入口，含目录查看与配置导入导出。",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "tangyiyong",
   "engines": {
     "eda": ">=4.1.54"
