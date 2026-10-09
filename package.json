@@ -1,0 +1,23 @@
+{
+  "name": "lceda-batch-export",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "嘉立创 EDA 专业版多子板生产与测试文件批量导出",
+  "scripts": {
+    "build": "npm run locales && node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "locales": "node scripts/build-locales.mjs",
+    "release-check": "node scripts/release-check.mjs"
+  },
+  "devDependencies": {
+    "@jlceda/pro-api-types": "^0.4.25",
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^26.6.4",
+    "esbuild": "^0.24.2",
+    "jszip": "^3.10.1",
+    "opencc-js": "^1.4.2",
+    "typescript": "^5.7.3"
+  }
+}

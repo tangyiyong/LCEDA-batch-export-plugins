@@ -1,0 +1,44 @@
+{
+  "schema": "lceda-batch-export",
+  "version": 1,
+  "name": "生产与测试",
+  "selectedKinds": [
+    "gerber",
+    "bom",
+    "dxf",
+    "netlist"
+  ],
+  "options": {
+    "gerber": {
+      "colorSilkscreen": false,
+      "unit": "mm",
+      "integerNumber": 4,
+      "decimalNumber": 5,
+      "metallicDrillingInformation": true,
+      "nonMetallicDrillingInformation": true,
+      "drillTable": true,
+      "flyingProbeTestingFile": true
+    },
+    "bom": {
+      "fileType": "xlsx"
+    },
+    "dxf": {
+      "layers": [
+        {
+          "layerId": 11,
+          "mirror": false
+        }
+      ]
+    },
+    "netlist": {
+      "netlistType": "JLCEDA"
+    },
+    "pickplace": {
+      "fileType": "csv",
+      "unit": "mm"
+    },
+    "testpoint": {
+      "fileType": "csv"
+    }
+  }
+}

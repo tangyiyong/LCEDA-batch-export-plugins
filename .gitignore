@@ -1,0 +1,13 @@
+node_modules/
+*.tsbuildinfo
+.DS_Store
+validation-output/
+VALIDATION.md
+/build/
+/dist/
+/iframe/index.html
+.env
+.env.*
+!.env.example
+*.eext
+*.zip

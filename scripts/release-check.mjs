@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import JSZip from 'jszip';
+const m=JSON.parse(await fs.readFile('extension.json','utf8'));
+const p=JSON.parse(await fs.readFile('package.json','utf8'));
+assert.equal(m.version,p.version);assert.equal(m.publisher,'tangyiyong');
+assert.match(m.uuid,/^[a-f0-9]{32}$/);assert.ok(m.categories.length);assert.ok(m.repository);
+const path=`build/dist/${m.name}_v${m.version}.eext`;
+const bytes=await fs.readFile(path),zip=await JSZip.loadAsync(bytes);
+for(const file of ['extension.json','dist/index.js','iframe/index.html','README.md','CHANGELOG.md','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','PUBLISHING.md','examples/production-config.json'])assert.ok(zip.file(file),file);
+const png=await zip.file('images/logo.png').async('nodebuffer');assert.equal(png.readUInt32BE(16),512);assert.equal(png.readUInt32BE(20),512);assert.ok(png.length<5*1024*1024);
+for(const lang of ['zh-Hans','zh-Hant','en','fr','ja','ko'])for(const part of ['','extensionJson/'])assert.ok(zip.file(`locales/${part}${lang}.json`));
+assert.ok(!Object.keys(zip.files).some(n=>/validation-output|node_modules|VALIDATION|\.env/.test(n)));
+const report={version:m.version,path,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),checks:'passed',platforms:{macOS:'client verification recorded separately',Windows:'path/config automated tests; native client unverified'}};
+await fs.writeFile('build/release-check.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
