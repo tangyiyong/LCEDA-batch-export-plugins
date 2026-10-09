@@ -12,6 +12,8 @@ v1.2.0 于 2026-10-09 被退回，原因：README 缺少功能演示图或功能
 - 演示图片使用公开示例数据，不含真实工程；本次修复未变更生产导出逻辑。
 - 市场重新提交截图保存在本地 `build/market-review-1.2.1.png`。
 
+GitHub 版本发布：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases/tag/v1.2.1
+
 管理地址：https://jlc-ext.com/portal/tangyiyong
 
 ---
