@@ -19,6 +19,6 @@ export function translateStatic(root:HTMLElement):void {
   root.querySelectorAll<HTMLElement>('[data-i18n]').forEach(node=>node.textContent=t(node.dataset.i18n!));
   root.querySelectorAll<HTMLElement>('[data-i18n-placeholder]').forEach(node=>node.setAttribute('placeholder',t(node.dataset.i18nPlaceholder!)));
   root.querySelectorAll<HTMLElement>('[data-i18n-label]').forEach(node=>node.setAttribute('aria-label',t(node.dataset.i18nLabel!)));
-  document.documentElement.lang=current;document.title=t('多子板一键导出');
+  document.documentElement.lang=current;document.title=t('多板生产文件一键导出');
   document.documentElement.style.setProperty('--options-label',JSON.stringify(t('配置 ▾')));
 }

@@ -9,7 +9,7 @@ data['zh-Hans'].Outfit='装配体';data['zh-Hant'].Outfit='組裝體';data['zh-H
 const manifest=JSON.parse(await fs.readFile('extension.json','utf8'));
 for(const [lang,values] of Object.entries(data)){
  await fs.writeFile(`locales/${lang}.json`,JSON.stringify(values,null,2)+'\n');
- const fields=[manifest.displayName,manifest.description,'批量导出','多子板一键导出…'];const mapped={};for(const key of fields)mapped[key]=key.endsWith('…')?values[key.slice(0,-1)]+'…':values[key]||key;
+ const fields=[manifest.displayName,manifest.description,'批量导出','多板生产文件一键导出…'];const mapped={};for(const key of fields)mapped[key]=key.endsWith('…')?values[key.slice(0,-1)]+'…':values[key]||key;
  await fs.writeFile(`locales/extensionJson/${lang}.json`,JSON.stringify(mapped,null,2)+'\n');
 }
 await fs.writeFile('src/locale-data.ts','// Generated from scripts/translations.tsv by npm run locales.\nexport const dictionaries:Record<string,Record<string,string>>='+JSON.stringify(data)+';\n');

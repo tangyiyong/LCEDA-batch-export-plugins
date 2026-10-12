@@ -1,3 +1,17 @@
+# v1.2.3 更名记录
+
+2026-10-12，扩展更名为“多板生产文件一键导出”，窗口标题、菜单、六种语言名称、README 与功能截图同步更新。保留 UUID、内部名称与配置 schema。
+
+构建、发布检查、TypeScript 检查及 17 项自动化测试通过。README 图片继续使用安装包内的本地相对路径。
+
+安装包：`build/dist/lceda-batch-export_v1.2.3.eext`。
+SHA-256：`5e0d8d0931957b57f96b5f2681ee0a2fa0acd14e983ba3664e0d993027b6b248`。
+GitHub Release：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases/tag/v1.2.3
+
+当前版本尚未提交扩展市场审核；前次上传因界面控制中断未完成。
+
+---
+
 # v1.2.2 图片相对路径审核修复
 
 2026-10-12，根据市场反馈“图片链接不支持外链，请使用本地相对路径”，将 README 两张演示图改为 `./images/demo/overview.jpg` 与 `./images/demo/export-options.jpg`。

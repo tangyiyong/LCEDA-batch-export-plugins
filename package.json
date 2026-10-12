@@ -1,6 +1,6 @@
 {
   "name": "lceda-batch-export",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "type": "module",
   "description": "嘉立创 EDA 专业版多子板生产与测试文件批量导出",
