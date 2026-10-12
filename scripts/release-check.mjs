@@ -15,10 +15,9 @@ assert.ok(!Object.keys(zip.files).some(n=>/validation-output|node_modules|VALIDA
 const readme=await zip.file('README.md').async('string');
 const imageLinks=[...readme.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)].map(match=>match[1]);
 assert.ok(imageLinks.length>=2,'README must include functional demonstration images');
-const imagePrefix='https://raw.githubusercontent.com/tangyiyong/LCEDA-batch-export-plugins/main/';
 for (const link of imageLinks) {
-  assert.ok(link.startsWith(imagePrefix),'Demo image must use the public repository URL');
-  const file=link.slice(imagePrefix.length);
+  assert.match(link,/^\.\/images\/demo\/[a-z-]+\.jpg$/,'README images must use local relative paths; external URLs are not supported by the marketplace');
+  const file=link.slice(2);
   assert.match(file,/^images\/demo\/[a-z-]+\.jpg$/);
   assert.ok(zip.file(file),`Missing README image in package: ${file}`);
   const packed=await zip.file(file).async('nodebuffer'),local=await fs.readFile(file);

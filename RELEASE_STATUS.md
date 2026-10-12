@@ -1,3 +1,17 @@
+# v1.2.2 图片相对路径审核修复
+
+2026-10-12，根据市场反馈“图片链接不支持外链，请使用本地相对路径”，将 README 两张演示图改为 `./images/demo/overview.jpg` 与 `./images/demo/export-options.jpg`。
+
+构建与发布检查通过：图片相对路径可在安装包内解析，图片内容与源码一致；检查脚本拒绝图片外链。生产导出逻辑未变更。
+
+安装包：`build/dist/lceda-batch-export_v1.2.2.eext`。
+SHA-256：`c832260e1892354329d53db808b55b0774e7c191c8a18f869c1c5345107522d1`。
+GitHub Release：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases/tag/v1.2.2
+
+市场重新提交尚未完成：文件选择操作被用户界面控制中断；需在市场扩展管理中更新上传上述安装包。未确认审核通过或上架。
+
+---
+
 # v1.2.1 审核修复与重新提交记录
 
 v1.2.0 于 2026-10-09 被退回，原因：README 缺少功能演示图或功能演示 GIF。

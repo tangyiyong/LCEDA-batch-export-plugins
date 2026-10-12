@@ -33,20 +33,20 @@ npm run build
 
 勾选需要导出的子板及文件类型，选择保存根目录后点击“一键导出”。文件按类型保存到 `gerber/`、`bom/`、`dxf/`、`netlist/` 等子目录。导出完成后可点击“打开导出目录”检查文件。
 
-![功能演示：选择子板、文件类型与保存目录](https://raw.githubusercontent.com/tangyiyong/LCEDA-batch-export-plugins/main/images/demo/overview.jpg)
+![功能演示：选择子板、文件类型与保存目录](./images/demo/overview.jpg)
 
 ### 2. 配置导出参数与保存配置
 
 点击文件类型右侧的“配置”展开参数。下图展示 Gerber 的单位、精度、钻孔和图层等选项。使用“保存为默认值”保存常用选择；“导出配置”和“导入配置”用于交换完整 JSON 配置。
 
-![功能演示：展开 Gerber 导出参数](https://raw.githubusercontent.com/tangyiyong/LCEDA-batch-export-plugins/main/images/demo/export-options.jpg)
+![功能演示：展开 Gerber 导出参数](./images/demo/export-options.jpg)
 
 演示图片也包含在扩展安装包的 `images/demo/` 中。源码维护者可在 `npm run build` 后运行 `npm run demo`，再用本地静态服务器打开 `build/demo/` 重新截取界面；演示环境不提供生产导出或文件读写接口。
 
 ## 安装与使用
 
 1. 在桌面版嘉立创 EDA 专业版（最低 4.1.54）打开工程，并激活该工程的原理图或 PCB 标签页。
-2. 通过 **高级 → 扩展管理器 → 导入**，选择 `build/dist/lceda-batch-export_v1.2.1.eext`。
+2. 通过 **高级 → 扩展管理器 → 导入**，选择 `build/dist/lceda-batch-export_v1.2.2.eext`。
 3. 在扩展管理器的 **已安装 → 配置** 页找到“多子板一键导出”，启用扩展和顶部菜单显示。若客户端使用传统文件接口，再开启 **外部交互权限**。当前 V4.1.60 已用系统目录授权方式验证，选择根目录时授权写入即可。
 4. 点击新增的 **批量导出 → 多子板一键导出…** 菜单。
 5. 勾选子板，勾选文件类型，展开“配置”调整选项。
