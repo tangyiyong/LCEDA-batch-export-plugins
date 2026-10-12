@@ -8,7 +8,7 @@
 SHA-256：`5e0d8d0931957b57f96b5f2681ee0a2fa0acd14e983ba3664e0d993027b6b248`。
 GitHub Release：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases/tag/v1.2.3
 
-当前版本尚未提交扩展市场审核；前次上传因界面控制中断未完成。
+2026-10-12 已确认市场“版本管理”显示 `v1.2.3 / 审核中`，重新提交完成。上传过程中用户接管了界面；本记录以实际市场页面的版本与审核状态为准，尚未确认审核通过或公开上架。
 
 ---
 
@@ -22,7 +22,7 @@ GitHub Release：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releas
 SHA-256：`c832260e1892354329d53db808b55b0774e7c191c8a18f869c1c5345107522d1`。
 GitHub Release：https://github.com/tangyiyong/LCEDA-batch-export-plugins/releases/tag/v1.2.2
 
-市场重新提交尚未完成：文件选择操作被用户界面控制中断；需在市场扩展管理中更新上传上述安装包。未确认审核通过或上架。
+历史记录：本次操作当时因界面控制中断未确认提交；后续市场页面确认 v1.2.2 曾显示审核中，现已更新为 v1.2.3。
 
 ---
 
